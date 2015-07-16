@@ -1,3 +1,3 @@
 [
-	{"caption": "Formatter: indent current file", "command": "code_indenter"}
+	{"caption": "Formatter: format current file", "command": "code_indenter"}
 ]
