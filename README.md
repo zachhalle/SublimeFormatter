@@ -20,8 +20,8 @@ The following configuration can be used to indent OCaml code and signature files
     {
       ...
       "code_indent_paths": {
-      ".ml": "/Users/zach/.opam/4.02.1/bin/ocp-indent",
-      ".mli": "/Users/zach/.opam/4.02.1/bin/ocp-indent"
+        ".ml": "/Users/zach/.opam/4.02.1/bin/ocp-indent",
+        ".mli": "/Users/zach/.opam/4.02.1/bin/ocp-indent"
       },
       ...
     }
