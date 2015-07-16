@@ -12,7 +12,7 @@ Open a shell and go to your Sublime packages directory. Clone this repository in
 Then, open your User preferences file and specify paths to formatters you'd like to use for as many file extensions
 as you need. SublimeFormatter **requires** formatters which
 
-* Support the following syntax: `path-to-formatter path-to-file`
+* Support the following syntax: `path-to-formatter [options] path-to-file`
 * Output the indented code to standard output
 
 The following configuration can be used to indent OCaml code and signature files:
