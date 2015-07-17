@@ -30,8 +30,8 @@ class FormatterCommand(sublime_plugin.TextCommand):
 			return
 
 		indent_path = indent_paths[extension]
-		exe = path.split(' ')[0]
-		if not os.path.exists(path.split(' ')[0]):
+		exe = indent_path.split(' ')[0]
+		if not os.path.exists(exe):
 			sublime.error_message('Formatter is not a valid path name: ' + exe)
 			return
 
