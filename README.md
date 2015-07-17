@@ -42,6 +42,10 @@ I recommend using absolute paths to avoid issues with PATH variable resolving in
 
 # Usage
 
-SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
+By default, SublimeFormatter is run on save. To disable this feature, add `format_on_save: False` to your global or project settings. It can be run manually from the command palette as well, or you can also create key-bindings to the command `formatter`.
 
 ![Formatter usage](http://i.imgur.com/9p3YXVc.png)
+
+# Troubleshooting
+
+When SublimeFormatter is run on save, if it fails it will do so silently. Run it from the command palette to view error messages.
