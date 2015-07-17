@@ -29,7 +29,10 @@ class FormatterCommand(sublime_plugin.TextCommand):
 		content = sublime.Region(0, self.view.size())
 
 		try:
-			cmd_string = 'path fname'.replace('path', indent_path).replace('fname', fname)
+			cmd_string = 'path "fname"'.replace('path', indent_path).replace('fname', fname)
+			if ';' in cmd_string or 'rm -r' in cmd_string or 'rm -f' in cmd_string:
+				sublime.error_message('Formatter command rejected for security purposes ' + cmd_string)
+				return
 			indented = subprocess.check_output(cmd_string, shell=True)
 			self.view.replace(edit, content, "".join(map(chr, indented)))
 		except subprocess.CalledProcessError as e:
