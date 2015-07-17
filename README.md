@@ -1,5 +1,5 @@
 # SublimeFormatter
-A Sublime Text 3 plugin which can be configured to format your code files.
+A Sublime Text 3 plugin which formats your source files.
 
 # Installation
 Open a shell and go to your Sublime packages directory. Clone this repository into that directory. On OS X:
@@ -14,6 +14,8 @@ as you need. SublimeFormatter **requires** formatters which
 
 * Support the following syntax: `/path/to/formatter [options] /path/to/source`
 * Output the indented code to standard output
+
+Using it with other formatters may lead to unpredictable behavior. Please **do not** do so.
 
 The config format is as follows:
 
@@ -42,6 +44,14 @@ I recommend using absolute paths to avoid issues with PATH variable resolving in
 
 # Usage
 
-SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
+By default, SublimeFormatter is run on save. To disable this feature, add `format_on_save: False` to your global or project settings. It can be run manually from the command palette as well, or you can also create key-bindings to the command `formatter`.
 
 ![Formatter usage](http://i.imgur.com/9p3YXVc.png)
+
+# Troubleshooting
+
+When SublimeFormatter is run on save, if it fails it will do so silently. Run it from the command palette to view error messages.
+
+# Emphatic warning
+
+This plugin will run commands in your shell. As such, attempting to format files named, for example `rm -rf / ; bad_idea.txt` can be a **very bad idea**. It attempts to detect whether a command may be destructive before running it, but if you are really enterprising, you may be able to fool it if you try hard enough. Please use sensible file names.
