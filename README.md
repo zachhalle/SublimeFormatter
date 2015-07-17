@@ -34,4 +34,4 @@ Since this plugin runs scripts on your file from the command line, you must firs
 
 # Emphatic warning
 
-This plugin will run commands in your shell. Measures are taken to prevent destructive input from being executed, but perhaps if you are truly enterprising you could fool the plugin. Basically, please don't attempt to use formatters or run this plugin on files whose paths attempt to hide a 'rm -rf /' somewhere in there, or it might go poorly for you.
+This plugin will run commands in your shell. Measures are taken to prevent destructive input from being executed, but perhaps if you are truly enterprising you could fool the plugin. Basically, please don't attempt to use formatters or run this plugin on files whose paths attempt to hide a `rm -rf /` somewhere in there, or it might go poorly for you.
