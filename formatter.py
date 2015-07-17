@@ -1,5 +1,6 @@
 import sublime, sublime_plugin
 import subprocess
+import os.path
 
 class FormatterCommand(sublime_plugin.TextCommand):
 	
@@ -29,10 +30,15 @@ class FormatterCommand(sublime_plugin.TextCommand):
 			return
 
 		indent_path = indent_paths[extension]
+		exe = path.split(' ')[0]
+		if not os.path.exists(path.split(' ')[0]):
+			sublime.error_message('Formatter is not a valid path name: ' + exe)
+			return
+
 		content = sublime.Region(0, self.view.size())
 
 		try:
-			cmd_string = 'path fname'.replace('path', indent_path).replace('fname', fname)
+			cmd_string = 'path "fname"'.replace('path', indent_path).replace('fname', fname)
 			indented = subprocess.check_output(cmd_string, shell=True)
 			self.view.replace(edit, content, "".join(map(chr, indented)))
 		except subprocess.CalledProcessError as e:
