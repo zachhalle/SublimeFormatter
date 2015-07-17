@@ -13,16 +13,16 @@ class FormatterCommand(sublime_plugin.TextCommand):
 		verbose = True if not 'verbose' in kwargs else kwargs['verbose']
 
 		if not self.view.settings().has('code_indent_paths'):
-			#if verbose:
-			sublime.error_message('Formatter needs the code_indent_paths setting to be configured.')
+			if verbose:
+				sublime.error_message('Formatter needs the code_indent_paths setting to be configured.')
 			return
 
 		extension = self.get_extension(fname)
 		indent_paths = self.view.settings().get('code_indent_paths')
 
 		if not extension in indent_paths:
-			#if verbose:
-			sublime.error_message('Formatter does not have an indenter configured for the extension ' + extension)
+			if verbose:
+				sublime.error_message('Formatter does not have an indenter configured for the extension ' + extension)
 			return
 
 		indent_path = indent_paths[extension]
