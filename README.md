@@ -31,3 +31,7 @@ The following configuration can be used to indent OCaml code and signature files
 Since this plugin runs scripts on your file from the command line, you must first save any changes you have made. Then, SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
 
 ![Formatter usage](http://i.imgur.com/9p3YXVc.png)
+
+# Emphatic warning
+
+This plugin will run commands in your shell. Measures are taken to prevent destructive input from being executed, but perhaps if you are truly enterprising you could fool the plugin. Basically, please don't attempt to use formatters or run this plugin on files whose paths attempt to hide a `rm -rf /` somewhere in there, or it might go poorly for you.
