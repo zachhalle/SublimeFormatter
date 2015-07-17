@@ -15,7 +15,7 @@ as you need. SublimeFormatter **requires** formatters which
 * Support the following syntax: `/path/to/formatter [options] /path/to/source`
 * Output the indented code to standard output
 
-Using it with other formatters may lead to unpredictable behavior. Please **do not** do so.
+Using it with other formatters may lead to unpredictable behavior. For example, a formatter which works inplace, if used with this plugin, will likely erase your file. Please **do not** do so.
 
 The config format is as follows:
 
