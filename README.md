@@ -28,6 +28,6 @@ The following configuration can be used to indent OCaml code and signature files
 
 # Usage
 
-SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
+Since this plugin runs scripts on your file from the command line, you must first save any changes you have made. Then, SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
 
 ![Formatter usage](http://i.imgur.com/9p3YXVc.png)
