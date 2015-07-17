@@ -21,7 +21,7 @@ The config format is as follows:
 
     {
       ...
-      "code_indent_paths": {
+      "code_format_paths": {
         ".<file_extension_1>": "<formatter for that extension>",
         ...
         ".<file_extension_n>": "<formatter for that extension>"
@@ -33,7 +33,7 @@ I use the following configuration to indent OCaml code and signature files:
 
     {
       ...
-      "code_indent_paths": {
+      "code_format_paths": {
         ".ml": "~/.opam/4.02.1/bin/ocp-indent",
         ".mli": "~/.opam/4.02.1/bin/ocp-indent"
       },
