@@ -18,14 +18,14 @@ class FormatterCommand(sublime_plugin.TextCommand):
 		settings = self.view.settings()
 		
 		if not settings.has('code_format_paths'):
-			sublime.error_message('Formatter needs the code_indent_paths setting to be configured.')
+			sublime.error_message('Formatter needs the code_format_paths setting to be configured.')
 			return
 
 		extension = self.get_extension(fname)
 		indent_paths = settings.get('code_format_paths')
 
 		if not extension in indent_paths:
-			sublime.error_message('Formatter does not have an indenter configured for the extension ' + extension)
+			sublime.error_message('Formatter is not configured for the extension ' + extension)
 			return
 
 		indent_path = indent_paths[extension]
