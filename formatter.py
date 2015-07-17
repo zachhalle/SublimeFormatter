@@ -10,6 +10,10 @@ class FormatterCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		
+		if self.view.is_dirty():
+			sublime.error_message('Formatter needs the source file to be saved before being run')
+			return
+
 		fname = self.view.file_name()
 
 		if not self.view.settings().has('code_format_paths'):
