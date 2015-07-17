@@ -1,10 +1,10 @@
 # SublimeFormatter
-A Sublime Text 3 plugin which formats your source files.
+A Sublime Text 3 plugin which can be configured to format your code files.
 
 # Installation
 Open a shell and go to your Sublime packages directory. Clone this repository into that directory. On OS X:
 
-    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
+    cd ~/Library/Application Support/Sublime Text 3/Packages
     git clone https://github.com/zachhalle/SublimeFormatter ./Formatter
 
 # Configuration
@@ -15,43 +15,19 @@ as you need. SublimeFormatter **requires** formatters which
 * Support the following syntax: `/path/to/formatter [options] /path/to/source`
 * Output the indented code to standard output
 
-Using it with other formatters may lead to unpredictable behavior. For example, a formatter which works inplace, if used with this plugin, will likely erase your file. Please **do not** do so.
-
-The config format is as follows:
+The following configuration can be used to indent OCaml code and signature files:
 
     {
       ...
-      "code_format_paths": {
-        ".<file_extension_1>": "<formatter for that extension>",
-        ...
-        ".<file_extension_n>": "<formatter for that extension>"
+      "code_indent_paths": {
+        ".ml": "/Users/zach/.opam/4.02.1/bin/ocp-indent",
+        ".mli": "/Users/zach/.opam/4.02.1/bin/ocp-indent"
       },
       ...
     }
-
-I use the following configuration to indent OCaml code and signature files:
-
-    {
-      ...
-      "code_format_paths": {
-        ".ml": "~/.opam/4.02.1/bin/ocp-indent",
-        ".mli": "~/.opam/4.02.1/bin/ocp-indent"
-      },
-      ...
-    }
-
-I recommend using absolute paths to avoid issues with PATH variable resolving incorrectly.
 
 # Usage
 
-By default, SublimeFormatter is run on save. To disable this feature, add `format_on_save: False` to your global or project settings. It can be run manually from the command palette as well, or you can also create key-bindings to the command `formatter`.
+SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
 
 ![Formatter usage](http://i.imgur.com/9p3YXVc.png)
-
-# Troubleshooting
-
-When SublimeFormatter is run on save, if it fails it will do so silently. Run it from the command palette to view error messages.
-
-# Emphatic warning
-
-This plugin will run commands in your shell. As such, attempting to format files named, for example `rm -rf / ; bad_idea.txt` can be a **very bad idea**. It attempts to detect whether a command may be destructive before running it, but if you are really enterprising, you may be able to fool it if you try hard enough. Please use sensible file names.
