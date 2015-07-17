@@ -4,7 +4,7 @@ A Sublime Text 3 plugin which formats your source files.
 # Installation
 Open a shell and go to your Sublime packages directory. Clone this repository into that directory. On OS X:
 
-    cd ~/Library/Application Support/Sublime Text 3/Packages
+    cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
     git clone https://github.com/zachhalle/SublimeFormatter ./Formatter
 
 # Configuration
