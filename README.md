@@ -1,5 +1,5 @@
 # SublimeFormatter
-A Sublime Text 3 plugin which can be configured to format your code files.
+A Sublime Text 3 plugin which formats your source files.
 
 # Installation
 Open a shell and go to your Sublime packages directory. Clone this repository into that directory. On OS X:
