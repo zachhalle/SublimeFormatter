@@ -23,8 +23,6 @@ class FormatterCommand(sublime_plugin.TextCommand):
 			sublime.error_message('Formatter does not have an indenter configured for the extension ' + extension)
 			return
 
-
-
 		indent_path = indent_paths[extension]
 		content = sublime.Region(0, self.view.size())
 
