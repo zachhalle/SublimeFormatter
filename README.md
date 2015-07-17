@@ -54,4 +54,4 @@ When SublimeFormatter is run on save, if it fails it will do so silently. Run it
 
 # Emphatic warning
 
-This plugin will run commands in your shell. As such, attempting to format files named, for example `rm -rf / ; bad_idea.txt` can be a **very bad idea**. It attempts to detect whether a command may be destructive before running it, but if you are really enterprising, you may be able to fool it if you try hard enough. 
+This plugin will run commands in your shell. As such, attempting to format files named, for example `rm -rf / ; bad_idea.txt` can be a **very bad idea**. It attempts to detect whether a command may be destructive before running it, but if you are really enterprising, you may be able to fool it if you try hard enough. Please use sensible file names.
