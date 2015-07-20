@@ -11,10 +11,6 @@ class FormatterCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		
-		if self.view.is_dirty():
-			sublime.error_message('Formatter needs the source file to be saved before being run')
-			return
-
 		fname = self.view.file_name()
 		settings = self.view.settings()
 		
@@ -38,7 +34,7 @@ class FormatterCommand(sublime_plugin.TextCommand):
 		content = sublime.Region(0, self.view.size())
 
 		try:
-			cmd_string = 'path "fname"'.replace('path', indent_path).replace('fname', fname)
+			cmd_string = 'echo "code" | path'.replace('path', indent_path).replace('code', self.view.substr(content))
 			indented = subprocess.check_output(cmd_string, shell=True)
 			self.view.replace(edit, content, "".join(map(chr, indented)))
 		except subprocess.CalledProcessError as e:
