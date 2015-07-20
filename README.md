@@ -12,8 +12,11 @@ Open a shell and go to your Sublime packages directory. Clone this repository in
 Then, open your User preferences file and specify paths to formatters you'd like to use for as many file extensions
 as you need. SublimeFormatter **requires** formatters which
 
-* Support the following syntax: `/path/to/formatter [options] /path/to/source`
+* Support the following syntax: `/path/to/formatter [options]`
+* Receive code from standard input when called with the above syntax
 * Output the indented code to standard output
+
+Using formatters that do not adhere to this behaviour can produce undesirable results, such as erasing the contents of the current buffer (which can be undone with ctrl + Z, but still, not fun).
 
 The following configuration can be used to indent OCaml code and signature files:
 
