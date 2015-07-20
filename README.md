@@ -14,11 +14,23 @@ as you need. SublimeFormatter **requires** formatters which
 
 * Support the following syntax: `/path/to/formatter [options]`
 * Receive code from standard input when called with the above syntax
-* Output the indented code to standard output
+* Output the formatted code to standard output
+
+Configure SublimeFormatter with the following syntax in your preferences file:
+
+    {
+      ...
+      "code_format_paths": {
+        ".<file_extension_1>": "<path_to_formatter_1>",
+        ...
+        ".<file_extension_n>": "<path_to_formatter_n>"
+      },
+      ...
+    }
 
 Using formatters that do not adhere to this behaviour can produce undesirable results, such as erasing the contents of the current buffer (which can be undone with ctrl + Z, but still, not fun).
 
-The following configuration can be used to indent OCaml code and signature files:
+I use the following configuration can be used to indent OCaml code and signature files:
 
     {
       ...
@@ -29,11 +41,17 @@ The following configuration can be used to indent OCaml code and signature files
       ...
     }
 
+I recommend using absolute paths to avoid issues with the `PATH` variable resolving incorrectly.
+
 # Usage
 
-SublimeFormatter can be run from the command palette. You can also create key-bindings to the command `formatter`.
+By default, SublimeFormatter is run on save. Upon saving, it will check if you have configured a formatter for the file extension of the saved file, and run it if you do. To disable this behavior, add `format_on_save: false` to your global or project preferences. SublimeFormatter can also be run from the command palette, and you can also create key-bindings to the command `formatter`.
 
 ![Formatter usage](http://i.imgur.com/9p3YXVc.png)
+
+# Troubleshooting
+
+When SublimeFormatter is run on save, if it fails it will do so silently. Run it from the command palette to view error messages.
 
 # Emphatic warning
 
